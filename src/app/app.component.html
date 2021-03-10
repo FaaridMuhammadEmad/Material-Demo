@@ -122,12 +122,13 @@
 </mat-menu>
 
 <mat-menu #lazyMenu="matMenu">
-  <ng-template matMenuContent let-name="name">
+  <ng-template matMenuContent let-name="name" let-hobby="hobby">
     <button mat-menu-item>Settings </button>
+    <button mat-menu-item>Hobby is {{hobby}} </button>
   <button mat-menu-item>Logout {{name}}</button>
   </ng-template>
 </mat-menu>
 
-<button mat-raised-button [matMenuTriggerData]="{name:'Faarid'}" [matMenuTriggerFor]="lazyMenu">Faarid</button>
-<button mat-raised-button [matMenuTriggerData]="{name:'Vinncorp'}" [matMenuTriggerFor]="lazyMenu">Vinncorp </button>
+<button mat-raised-button [matMenuTriggerData]="{name:'Faarid', hobby:'cricket'}" [matMenuTriggerFor]="lazyMenu">Faarid</button>
+<button mat-raised-button [matMenuTriggerData]="{name:'Vinncorp', hobby:'football'}" [matMenuTriggerFor]="lazyMenu">Vinncorp </button>
 
