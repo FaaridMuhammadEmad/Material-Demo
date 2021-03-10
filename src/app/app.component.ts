@@ -9,11 +9,16 @@ export class AppComponent {
   title = 'angular-material';
   notification=2;
   showSpinner=false;
+  opened=false;
 
   loadData(){
     this.showSpinner=true;
     setTimeout(()=>{
       this.showSpinner=false;
     },5000)
+  }
+
+  log(state:any){
+    console.log(state)
   }
 }

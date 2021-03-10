@@ -84,11 +84,25 @@
 <button (click)="loadData()">Click</button> -->
 
 <!-- Mat Toolbar -->
-<mat-toolbar color="primary" class="navbar">
+<!-- <mat-toolbar color="primary" class="navbar">
   <div>Vinn Corp</div>
   <div>
     <span>Home</span>
     <span>About</span>
     <span>Contact</span>
   </div>
-</mat-toolbar>
+</mat-toolbar> -->
+
+<!-- Mat Sidenav -->
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" (opened)="log('opened')" (closed)="log('closed')" [(opened)]="opened">Sidenav</mat-sidenav>
+  <mat-sidenav-content>Main
+    <button (click)="opened=!opened">Toggle Opened</button>
+    <button (click)="sidenav.open()">Open</button>
+    <button (click)="sidenav.close()">Close</button>
+    <button (click)="sidenav.toggle()">Toggle </button>
+
+  </mat-sidenav-content>
+  
+
+</mat-sidenav-container>
