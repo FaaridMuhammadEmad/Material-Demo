@@ -94,7 +94,7 @@
 </mat-toolbar> -->
 
 <!-- Mat Sidenav -->
-<mat-sidenav-container>
+<!-- <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" (opened)="log('opened')" (closed)="log('closed')" [(opened)]="opened">Sidenav</mat-sidenav>
   <mat-sidenav-content>Main
     <button (click)="opened=!opened">Toggle Opened</button>
@@ -103,6 +103,31 @@
     <button (click)="sidenav.toggle()">Toggle </button>
 
   </mat-sidenav-content>
-  
 
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+
+
+<!-- Mat Menu -->
+<mat-menu  #appMenu="matMenu" xPosition="after" yPosition="above">
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">Frontend </button>
+  <button mat-menu-item>Backend </button>
+</mat-menu>
+
+<button class="center" mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+
+<mat-menu #subMenu="matMenu">
+  <button mat-menu-item>React </button>
+  <button mat-menu-item>Angular </button>
+  <button mat-menu-item>Android </button>
+</mat-menu>
+
+<mat-menu #lazyMenu="matMenu">
+  <ng-template matMenuContent let-name="name">
+    <button mat-menu-item>Settings </button>
+  <button mat-menu-item>Logout {{name}}</button>
+  </ng-template>
+</mat-menu>
+
+<button mat-raised-button [matMenuTriggerData]="{name:'Faarid'}" [matMenuTriggerFor]="lazyMenu">Faarid</button>
+<button mat-raised-button [matMenuTriggerData]="{name:'Vinncorp'}" [matMenuTriggerFor]="lazyMenu">Vinncorp </button>
+
