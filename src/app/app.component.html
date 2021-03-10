@@ -60,6 +60,20 @@
 </div> -->
 
 <!-- MAT ICON -->
-<div>
+<!-- <div>
   <mat-icon color="primary">build</mat-icon>
+</div> -->
+
+<!-- BADGES -->
+<div>
+<span matBadge="5">Notifications</span>
+</div>
+<div>
+<span [matBadge]="notification" [matBadgeHidden]="notification===1" matBadgePosition="below before" matBadgeSize="small" matBadgeColor="accent" matBadgeOverlap="false">Notifications</span>
+</div>
+<div>
+<span matBadge="5" matBadgePosition="below after" matBadgeColor="primary" matBadgeOverlap="false">BelowAfter</span>
+</div>
+<div>
+  <span matBadge="5" matBadgePosition="above after" matBadgeSize="large" matBadgeColor="warn" matBadgeOverlap="false">AboveAfter</span>
 </div>
