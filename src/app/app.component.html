@@ -256,7 +256,7 @@
 </mat-form-field> -->
 
 <!-- Mat Select -->
-<mat-form-field>
+<!-- <mat-form-field>
   <mat-label>Topic</mat-label>
   <mat-select [(value)]="selectedValue" multiple>
     <mat-option>None</mat-option>
@@ -271,4 +271,16 @@
     </mat-optgroup>
   </mat-select>
 </mat-form-field>
-{{selectedValue}}
+{{selectedValue}} -->
+
+<!-- Auto Complete -->
+<form>
+  <mat-form-field>
+    <input type="text" matInput [matAutocomplete]="auto"/>
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">
+          {{option}}
+        </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

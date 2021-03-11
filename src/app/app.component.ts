@@ -11,6 +11,7 @@ export class AppComponent {
   showSpinner=false;
   opened=false;
   selectedValue:any;
+  options:string[]=['Angular','React','Android'];
 
   loadData(){
     this.showSpinner=true;
