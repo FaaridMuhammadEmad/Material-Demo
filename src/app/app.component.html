@@ -274,7 +274,7 @@
 {{selectedValue}} -->
 
 <!-- Auto Complete -->
-<form>
+<!-- <form>
   <mat-form-field>
     <input type="text" matInput [matAutocomplete]="auto" [formControl]="myControl"/>
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
@@ -283,4 +283,15 @@
         </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-</form>
+</form> -->
+
+<!-- Mat Checkbox -->
+<mat-checkbox labelPosition="after">
+  Subscribe
+</mat-checkbox>
+
+<mat-radio-group>
+  <mat-radio-button value="angular">Angular</mat-radio-button>
+  <mat-radio-button value="react">React</mat-radio-button>
+  <mat-radio-button value="vue">Vue</mat-radio-button>
+</mat-radio-group>
