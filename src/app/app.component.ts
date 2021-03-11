@@ -21,4 +21,7 @@ export class AppComponent {
   log(state:any){
     console.log(state)
   }
+  logChange(value:any){
+    console.log(value)
+  }
 }
