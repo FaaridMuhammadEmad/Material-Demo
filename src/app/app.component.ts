@@ -22,6 +22,9 @@ export class AppComponent implements OnInit{
     {name:  'Vue '},
   ];
 
+  maxDate = new Date();
+  minDate= new Date(2019,3,10);
+
   myControl = new FormControl();
   filteredOptions: Observable<string[]> | undefined;
 
@@ -55,7 +58,13 @@ export class AppComponent implements OnInit{
     return this.options.filter(option => 
       option.toLowerCase().includes(filterValue )
       );
-}
+  }
+
+  dateFilter = (date: { getDay: () => any; }) =>{
+    const day = date.getDay();
+    console.log("DDD",day != 0 && day !=6)
+    return day != 0 && day !=6;
+  }
 }
 
 
