@@ -237,7 +237,7 @@
 </mat-horizontal-stepper> -->
 
 <!-- Mat Form -->
-<mat-form-field floatLabel="auto" hideRequiredMarker appearance="legacy" color="warn">
+<!-- <mat-form-field floatLabel="auto" hideRequiredMarker appearance="legacy" color="warn">
   <mat-label>Name</mat-label>
   <input matInput required>
   <mat-hint align='end'>Min 5 characters</mat-hint>
@@ -253,4 +253,22 @@
   <mat-label>Name</mat-label>
   <input matInput required>
   <mat-hint align='end'>Min 5 characters</mat-hint>
+</mat-form-field> -->
+
+<!-- Mat Select -->
+<mat-form-field>
+  <mat-label>Topic</mat-label>
+  <mat-select [(value)]="selectedValue" multiple>
+    <mat-option>None</mat-option>
+    <mat-optgroup label="Web" >
+      <mat-option value="angular">Angular</mat-option>
+      <mat-option value="react">React</mat-option>
+      <mat-option value="android">Vue</mat-option>
+    </mat-optgroup>
+    <mat-optgroup label="Mobile">
+      <mat-option value="react">React Native</mat-option>
+      <mat-option value="android">Android</mat-option>
+    </mat-optgroup>
+  </mat-select>
 </mat-form-field>
+{{selectedValue}}
