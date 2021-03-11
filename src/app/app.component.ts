@@ -88,7 +88,11 @@ export class AppComponent implements OnInit{
   }
 
   openDialog(){
-    this.dialog.open(CustomerSnackBarComponentComponent);
+    let dialogRef = this.dialog.open(CustomerSnackBarComponentComponent,{data:{name:'Faarid'}});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("Dialog result: ", result)
+    })
   }
 }
 
