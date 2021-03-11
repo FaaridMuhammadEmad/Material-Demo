@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { CustomerSnackBarComponentComponent } from './customer-snack-bar-component/customer-snack-bar-component.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomerSnackBarComponentComponent
   ],
   imports: [
     BrowserModule,

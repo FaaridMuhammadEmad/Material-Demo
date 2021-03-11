@@ -1,7 +1,9 @@
 import { Component,OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { map,startWith } from 'rxjs/operators';
+import { CustomerSnackBarComponentComponent } from './customer-snack-bar-component/customer-snack-bar-component.component';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +29,8 @@ export class AppComponent implements OnInit{
 
   myControl = new FormControl();
   filteredOptions: Observable<string[]> | undefined;
+
+  constructor(private snackBar: MatSnackBar){}
 
   loadData(){
     this.showSpinner=true;
@@ -64,6 +68,22 @@ export class AppComponent implements OnInit{
     const day = date.getDay();
     console.log("DDD",day != 0 && day !=6)
     return day != 0 && day !=6;
+  }
+
+  openSnackbar(message:any,action:any){
+    let snackBarRef = this.snackBar.open(message,action,{duration:2000})
+
+    snackBarRef.afterDismissed().subscribe(()=>{
+      console.log("The snackbar was dismissed")
+    });
+    
+    snackBarRef.onAction().subscribe(()=>{
+      console.log("The snackbar was triggered")
+    });
+  }
+
+  openCustomSnackBar(){
+    this.snackBar.openFromComponent(CustomerSnackBarComponentComponent,{duration:2000})
   }
 }
 
