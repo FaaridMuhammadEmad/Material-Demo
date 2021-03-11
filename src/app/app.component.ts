@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { map,startWith } from 'rxjs/operators';
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit{
   myControl = new FormControl();
   filteredOptions: Observable<string[]> | undefined;
 
-  constructor(private snackBar: MatSnackBar){}
+  constructor(private snackBar: MatSnackBar,public dialog: MatDialog){}
 
   loadData(){
     this.showSpinner=true;
@@ -84,6 +85,10 @@ export class AppComponent implements OnInit{
 
   openCustomSnackBar(){
     this.snackBar.openFromComponent(CustomerSnackBarComponentComponent,{duration:2000})
+  }
+
+  openDialog(){
+    this.dialog.open(CustomerSnackBarComponentComponent);
   }
 }
 
